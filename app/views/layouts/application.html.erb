@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Petals</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render "layouts/sessions_navbar" %>
+
+<div class="header"></div>
+
+<div class="main">
+	<div class="container">
+
+	
+	<div class="row wrapper">
+
+      <div class="span9">
+        <div class="heading-bar">
+          <h3 class="pull-left">Petals <span class="subheading">(subheading possible)</span></h3>
+       </div>
+		<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      </div>
+
+    </div>
+	</div>
+</div>
+</body>
+</html>
