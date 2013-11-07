@@ -40,6 +40,8 @@
       <div class="span9">
         <ul class="nav nav-tabs header-tabs btn-block pull-right">
           <li class="active"><a href="#"><i class="icon-dashboard"></i> Dashboard</a></li>
+          <li><a href="<%= stores_path %>"><i class="icon-volume-up"></i> Campaigns</a></li>
+          <li><a href="<%= stores_path %>"><i class="icon-home"></i> Stores</a></li>
            <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -68,13 +70,12 @@
             <li><a href="#">another link</a></li>
           </ul>
         </div>
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
+		
 
         <%= yield %>
       </div>
 
-      <%= render "layouts/sidebar" %>
+      <%= content_for?(:sidebar) ? yield(:sidebar) : render(:partial => 'layouts/sidebar') %>
 
     </div>
     <%= render "layouts/footer" %>
