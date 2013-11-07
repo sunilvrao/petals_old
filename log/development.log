@@ -3584,3 +3584,381 @@ Migrating to CreateStores (20131107155440)
   [1m[35m (246.1ms)[0m  CREATE TABLE `stores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `phone` varchar(255), `website` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
   [1m[36m (1.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20131107155440')[0m
   [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-11-07 10:01:37 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 25ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:01:38 -0600
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` 
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:01:38 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:01:38 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:08:31 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:08:31 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:08:31 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:09:43 -0600
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` 
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:09:43 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:09:43 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2013-11-07 10:09:46 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navbar.html.erb (0.9ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:09:46 -0600
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:09:46 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2013-11-07 10:09:57 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"esfo/KOD+GKZpuXEOVBBpDSHBdjwXCWLvPOgnj/OLkI=", "user"=>{"email"=>"sunilrao@collabrite.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'sunilrao@collabrite.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2013-11-07 12:51:49', `current_sign_in_at` = '2013-11-07 16:09:57', `sign_in_count` = 8, `updated_at` = '2013-11-07 16:09:57' WHERE `users`.`id` = 2[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3001/
+Completed 302 Found in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:09:57 -0600
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/_typography.html.erb (0.0ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_layout.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_tables.html.erb (0.0ms)
+  Rendered dashboard/_buttons.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_alerts.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_comments.html.erb (0.9ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_blank_slate.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_activity.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_navigation.html.erb (0.7ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_pagination.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_accordion.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/petals (12.4ms)
+  Rendered layouts/_modal.html.erb (0.2ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navbar.html.erb (37.3ms)
+  Rendered layouts/_cal.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 58ms (Views: 52.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:09:58 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:09:58 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar1.png" for 127.0.0.1 at 2013-11-07 10:09:58 -0600
+Served asset /avatar1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar2.png" for 127.0.0.1 at 2013-11-07 10:09:58 -0600
+Served asset /avatar2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clipboard.png" for 127.0.0.1 at 2013-11-07 10:09:58 -0600
+Served asset /clipboard.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+  [1m[36mUser Load (16.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/_typography.html.erb (0.0ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_layout.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_tables.html.erb (0.0ms)
+  Rendered dashboard/_buttons.html.erb (0.2ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_alerts.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_comments.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_blank_slate.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_activity.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_navigation.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_pagination.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_accordion.html.erb (0.6ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/petals (10.0ms)
+  Rendered layouts/_modal.html.erb (0.2ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navbar.html.erb (4.0ms)
+  Rendered layouts/_cal.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar1.png" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+Served asset /avatar1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar2.png" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+Served asset /avatar2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clipboard.png" for 127.0.0.1 at 2013-11-07 10:10:11 -0600
+Served asset /clipboard.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:11:41 -0600
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/_typography.html.erb (0.0ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_layout.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_tables.html.erb (0.0ms)
+  Rendered dashboard/_buttons.html.erb (0.2ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_alerts.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_comments.html.erb (0.7ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_blank_slate.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_activity.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_navigation.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_pagination.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_accordion.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/petals (9.7ms)
+  Rendered layouts/_modal.html.erb (0.2ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navbar.html.erb (4.0ms)
+  Rendered layouts/_cal.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:11:42 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:11:42 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar1.png" for 127.0.0.1 at 2013-11-07 10:11:42 -0600
+Served asset /avatar1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar2.png" for 127.0.0.1 at 2013-11-07 10:11:42 -0600
+Served asset /avatar2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clipboard.png" for 127.0.0.1 at 2013-11-07 10:11:42 -0600
+Served asset /clipboard.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/_typography.html.erb (0.0ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_layout.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_tables.html.erb (0.0ms)
+  Rendered dashboard/_buttons.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_alerts.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_comments.html.erb (0.7ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_blank_slate.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_activity.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_navigation.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_pagination.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_accordion.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/petals (10.5ms)
+  Rendered layouts/_modal.html.erb (0.2ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navbar.html.erb (4.1ms)
+  Rendered layouts/_cal.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar1.png" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+Served asset /avatar1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar2.png" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+Served asset /avatar2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clipboard.png" for 127.0.0.1 at 2013-11-07 10:16:45 -0600
+Served asset /clipboard.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+Processing by DashboardController#index as HTML
+  Rendered dashboard/_typography.html.erb (0.0ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_layout.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_tables.html.erb (0.0ms)
+  Rendered dashboard/_buttons.html.erb (0.2ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_alerts.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_comments.html.erb (0.7ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_blank_slate.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_activity.html.erb (0.8ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_navigation.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/_pagination.html.erb (0.4ms)
+  Rendered dashboard/_heading.html.erb (0.1ms)
+  Rendered dashboard/_accordion.html.erb (0.5ms)
+  Rendered dashboard/_heading.html.erb (0.0ms)
+  Rendered dashboard/index.html.erb within layouts/petals (10.4ms)
+  Rendered layouts/_modal.html.erb (0.2ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `roles` INNER JOIN `users_roles` ON `roles`.`id` = `users_roles`.`role_id` WHERE `users_roles`.`user_id` = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navbar.html.erb (4.0ms)
+  Rendered layouts/_cal.html.erb (0.0ms)
+  Rendered layouts/_sidebar.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 21ms (Views: 20.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar1.png" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+Served asset /avatar1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/avatar2.png" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+Served asset /avatar2.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/clipboard.png" for 127.0.0.1 at 2013-11-07 10:17:45 -0600
+Served asset /clipboard.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2013-11-07 10:18:30 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-11-07 10:18:30 -0600
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` 
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-07 10:18:30 -0600
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-07 10:18:30 -0600
+Served asset /application.js - 304 Not Modified (0ms)
