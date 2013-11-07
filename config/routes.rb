@@ -1,5 +1,9 @@
 Petals::Application.routes.draw do
   
+  resources :stores
+
+  resources :addresses
+
   devise_for :users
   resources :users
   get "dashboard/index"

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Petals</title>
+  <title>CollabRite</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,18 +19,18 @@
 	
 	<div class="row wrapper">
 
-      <div class="span9">
         <div class="heading-bar">
-          <h3 class="pull-left">Petals <span class="subheading">(subheading possible)</span></h3>
+          <h2 class="pull-left">Petals - <span class="subheading">Agile Marketing Platform</span></h2>
        </div>
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
         <%= yield %>
-      </div>
 
     </div>
+       <footer>
+          <p>&copy; Company 2013</p>
+        </footer>
+
 	</div>
+       
 </div>
 </body>
 </html>
