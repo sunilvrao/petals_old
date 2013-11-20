@@ -1,0 +1,47 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <%= link_to "CollabRite", root_path, :class => 'brand' %>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">How it Works</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">About Us <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Execution - RiteSpeed</a></li>
+              <li><a href="#">Technology - Petals AMP</a></li>
+              <li><a href="#">CollabRite</a></li>
+              <li class="divider"></li>
+              <li class="nav-header">Nav header</li>
+              <li><a href="#">Thought Leaders</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form action="" class="navbar-search pull-left">
+          <i class="input-placeholder icon-search"></i>
+          <input type="text" placeholder="Search" class="search-query span2">
+        </form>
+        <ul class="nav pull-right">
+  		    <% if user_signed_in? %>
+  		      <li> <%= link_to 'Edit account', edit_user_registration_path %> </li>
+  			    <li> <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %> </li>
+  		      <% if current_user.has_role? :admin %>
+  		        <li> <%= link_to 'Admin', users_path %> </li>
+  		      <% end %>
+  		    <% else %>
+            <li> <%= link_to 'Login', new_user_session_path %> </li>
+  		      <li> <%= link_to 'Sign up', new_user_registration_path %> </li>
+  		    <% end %>  
+        </ul>
+      </div><!-- /.nav-collapse -->
+    </div>
+  </div><!-- /navbar-inner -->
+</div>

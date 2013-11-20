@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Petals</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+=======
+  <title>CollabRite</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+>>>>>>> bd61248c5f29da267dce95aac5da3194eb66423c
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<<<<<<< HEAD
 <%= yield %>
 
 </body>
 </html>
+=======
+<%= render "layouts/navbar" %>
+
+<div class="header"></div>
+
+<div class="main">
+	<div class="container">
+
+	
+	<div class="row wrapper">
+
+        <div class="heading-bar">
+          <h2 class="pull-left">Petals - <span class="subheading">Agile Marketing Platform</span></h2>
+       </div>
+        <%= yield %>
+
+    </div>
+       <footer>
+          <p>&copy; Company 2013</p>
+        </footer>
+
+	</div>
+       
+</div>
+</body>
+</html>
+>>>>>>> bd61248c5f29da267dce95aac5da3194eb66423c

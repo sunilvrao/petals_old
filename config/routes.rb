@@ -1,4 +1,5 @@
 Petals::Application.routes.draw do
+<<<<<<< HEAD
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,3 +55,22 @@ Petals::Application.routes.draw do
   #     resources :products
   #   end
 end
+=======
+  
+  resources :stores
+
+  resources :addresses
+
+  devise_for :users
+  resources :users
+  get "dashboard/index"
+
+  get "home/index"
+
+  authenticated :user do
+    root :to => 'dashboard#index'
+  end
+  root :to => "home#index"
+
+end
+>>>>>>> bd61248c5f29da267dce95aac5da3194eb66423c
